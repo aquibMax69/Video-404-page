@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Page Not Found</title>
+  <meta name="description" content="Oops! The page you're looking for doesn't exist." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+          },
+          keyframes: {
+            shimmer: {
+              '0%': { backgroundPosition: '-200% center' },
+              '100%': { backgroundPosition: '200% center' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f9ff;
+      min-height: 100vh;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    /* Glowing 404 - using Sky Blue */
+    .glow-text {
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 35%, #0369a1 65%, #075985 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Removed glass background per request */
+    .glass {
+      background: transparent;
+    }
+
+    /* Primary button - Sky Blue */
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.3);
+      transition: all 0.3s ease;
+      color: #ffffff; /* Primary button text remains white for contrast */
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(2, 132, 199, 0.5), 0 0 0 1px rgba(125, 211, 252, 0.5);
+    }
+
+    /* Ghost button */
+    .btn-ghost {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      color: #111827; /* Dark text for ghost button */
+    }
+    .btn-ghost:hover {
+      border-color: rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Fade-up animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .a1 { opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards; }
+    .a2 { opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards; }
+    .a3 { opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards; }
+    .a4 { opacity: 0; animation: fadeUp 0.7s ease 0.55s forwards; }
+    .a5 { opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards; }
+    .a6 { opacity: 0; animation: fadeUp 0.7s ease 0.85s forwards; }
+
+    /* Tag badge */
+    .tag {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: #0369a1;
+    }
+  </style>
+</head>
+
+<body class="relative">
+
+  <!-- ============ BACKGROUND VIDEO ============ -->
+  <div class="fixed inset-0 z-0">
+    <video
+      id="bg-video"
+      autoplay loop muted playsinline
+      class="w-full h-full object-cover"
+    >
+      <source
+        src="https://res.cloudinary.com/dtcoiwfyg/video/upload/f_webm/v1784026473/404_video_px4z5f.mp4"
+        type="video/webm"
+      />
+      <source
+        src="https://res.cloudinary.com/dtcoiwfyg/video/upload/v1784026473/404_video_px4z5f.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+  <!-- Main wrapper: align right -->
+  <div class="relative z-10 min-h-screen flex items-center justify-end px-6 md:px-16 lg:px-24 py-10 w-full">
+    
+    <!-- Light Glass Card -->
+    <div class="glass p-10 md:p-14 rounded-3xl max-w-2xl w-full flex flex-col items-start text-left space-y-6">
+
+
+
+      <!-- Giant 404 -->
+      <div class="a3">
+        <h1 class="glow-text font-inter font-black leading-none select-none"
+            style="font-size:clamp(4rem,10vw,8rem);letter-spacing:-4px;">
+          404
+        </h1>
+      </div>
+
+      <!-- Headline -->
+      <div class="a3">
+        <h2 class="text-gray-900 font-inter font-bold leading-snug"
+            style="font-size:clamp(1.5rem,3vw,2.5rem);">
+          Oops! You're Lost<br/>
+          <span class="text-sky-600">in Cyberspace</span>
+        </h2>
+      </div>
+
+      <!-- Description -->
+      <div class="a4">
+        <p class="text-gray-800 font-inter font-medium text-base sm:text-lg leading-relaxed max-w-lg">
+          The page you're looking for has vanished into the digital void.
+          It may have been moved, deleted, or perhaps it never existed.
+        </p>
+      </div>
+
+      <!-- Divider -->
+      <div class="a4 w-full max-w-md">
+        <div style="height:1px;background:linear-gradient(to right,rgba(0,0,0,0.15),transparent);"></div>
+      </div>
+
+      <!-- Status pills -->
+      <div class="a5 flex flex-wrap gap-3">
+        <div class="bg-white/60 border border-gray-200 rounded-lg px-4 py-2 flex items-center gap-2">
+    
+          <span class="text-gray-900 font-semibold text-sm font-inter">Page not found</span>
+        </div>
+        <div class="bg-white/60 border border-gray-200 rounded-lg px-4 py-2 flex items-center gap-2">
+         
+          <span class="text-gray-900 font-semibold text-sm font-inter">Route unavailable</span>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="a5 flex flex-col sm:flex-row gap-4 w-full mt-4">
+        <a href="/" id="go-home-btn"
+           class="btn-primary flex items-center justify-center gap-2
+                  font-inter font-bold text-sm
+                  px-7 py-3.5 rounded-xl no-underline w-full sm:w-auto">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          Go Back Home
+        </a>
+        <button id="go-back-btn" onclick="history.back()"
+                class="btn-ghost flex items-center justify-center gap-2
+                       font-inter font-bold text-sm
+                       px-7 py-3.5 rounded-xl w-full sm:w-auto">
+          <svg class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Go Back
+        </button>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</body>
+</html>
